@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:fillViewport="true"
+    android:focusable="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".home.FoodCategoryFragment">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMyCart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            tools:itemCount="5"
+            tools:listitem="@layout/list_item_my_cart" />
+
+        <RelativeLayout
+            android:id="@+id/rlBottom"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:padding="@dimen/margin_medium"
+            app:layout_constraintTop_toBottomOf="@+id/rvMyCart"
+            app:layout_constraintVertical_bias="0">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvFreeDelivery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:layout_marginBottom="@dimen/margin_normal"
+                android:text="Delivery is free"
+                android:textSize="@dimen/text_size_normal_xxxx"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ivRemove"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.617" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvFreeDelivery"
+                android:layout_alignBottom="@+id/tvGrandTotal"
+                android:layout_alignParentStart="true"
+                android:gravity="bottom"
+                android:text="value"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_normal_xxxx" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvGrandTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvFreeDelivery"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_toEndOf="@+id/tvValue"
+                android:text="161 usd"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_size_large_xxxx" />
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEmptyCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cart_is_empty"
+            android:textSize="@dimen/text_size_medium_x"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>
