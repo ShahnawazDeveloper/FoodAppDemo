@@ -37,4 +37,12 @@ class Problem1 {
         }
 
     }
+
+
+    /* What is the disadvantage of using the ASCII value of the letters to solve this problem?
+       Ans : 1) ASCII code uses only ENGLISH language.
+             2) A document written in other code can’t be read by ASCII code and it will display some characters only instead of the content.
+             3) maximum 128 characters that is not enough for some key boards having special characters.
+             7bit may not enough to represent larger values. advantage compare to EBCDIC are 7bit so quickly transferable in a fraction of time*/
+
 }
