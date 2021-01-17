@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.airbnb.mvrx.appendAt
 import com.android.foodappdemo.R
 import com.android.foodappdemo.models.FoodItem
 import com.android.foodappdemo.utils.CommonUtils
@@ -51,9 +52,20 @@ class FoodAdapter(
                 itemData?.let {
                     ivFood.load(context, it.image, R.drawable.placeholder)
                     CommonUtils.setValueToView(tvFoodTitle, it.name)
-                    CommonUtils.setValueToView(tvFoodDesc, it.description)
+                    it.ingredients?.let { list ->
+                        val builder = StringBuilder()
+                        list.forEachIndexed { index, element ->
+                            if (index == 0 || index == list.size.minus(1)) {
+                                builder.append(element.name)
+                            } else {
+                                builder.append(",${element.name}")
+                            }
+                        }
+                        CommonUtils.setValueToView(tvFoodDesc, builder.toString())
+                    } ?: kotlin.run {
+                        CommonUtils.setValueToView(tvFoodDesc, it.description)
+                    }
                     val spec = StringBuilder()
-
                     it.weight?.let { wg ->
                         spec.append("$wg grams")
                     }

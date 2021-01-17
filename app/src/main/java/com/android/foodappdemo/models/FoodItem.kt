@@ -2,6 +2,7 @@ package com.android.foodappdemo.models
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
+import java.lang.StringBuilder
 
 @Parcelize
 data class FoodItem(
@@ -9,6 +10,7 @@ data class FoodItem(
     val categoryId: Int,
     val image: String?,
     val name: String?,
+    val ingredients:List<Ingredient>?,
     val description: String?,
     val price: String,
     val weight: String?,
