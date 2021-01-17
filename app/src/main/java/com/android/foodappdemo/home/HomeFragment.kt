@@ -100,8 +100,7 @@ class HomeFragment : BaseFragment(R.layout.fragment_home) {
 
     private fun addBackStackListener() {
         requireActivity().supportFragmentManager.addOnBackStackChangedListener {
-            val fm = requireActivity().supportFragmentManager
-            fm?.let {
+            requireActivity().supportFragmentManager.let {
                 if (it.backStackEntryCount == 0) {
                     // your fragment visible
                     updateCartCount()
