@@ -38,7 +38,6 @@ class Problem1 {
 
     }
 
-
     /* What is the disadvantage of using the ASCII value of the letters to solve this problem?
        Ans : 1) ASCII code uses only ENGLISH language.
              2) A document written in other code can’t be read by ASCII code and it will display some characters only instead of the content.
