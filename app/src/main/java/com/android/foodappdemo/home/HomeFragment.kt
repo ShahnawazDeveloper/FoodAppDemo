@@ -1,25 +1,19 @@
 package com.android.foodappdemo.home
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
-import android.view.ViewTreeObserver.OnGlobalLayoutListener
 import androidx.fragment.app.Fragment
 import com.airbnb.mvrx.*
-import com.android.foodappdemo.HomeActivity
 import com.android.foodappdemo.adapter.FeaturedItemAdapter
 import com.android.foodappdemo.adapter.FragmentViewPagerAdapter
 import com.android.foodappdemo.R
 import com.android.foodappdemo.core.App
 import com.android.foodappdemo.core.BaseFragment
 import com.android.foodappdemo.models.Category
-import com.android.foodappdemo.my_cart.MyCartFragment
+import com.android.foodappdemo.my_cart.CartFragment
 import com.android.foodappdemo.utils.CommonUtils
 import com.android.foodappdemo.utils.setupWithViewPager2
 import com.android.foodappdemo.utils.visible
-import com.google.android.material.badge.BadgeDrawable
-import com.google.android.material.badge.BadgeUtils
-import com.google.android.material.badge.BadgeUtils.*
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
@@ -67,7 +61,7 @@ class HomeFragment : BaseFragment(R.layout.fragment_home) {
         setFeaturedItemsAdapter()
 
         fabLayout.setOnClickListener {
-            (requireActivity() as HomeActivity).addFragment(MyCartFragment())
+            (requireActivity() as HomeActivity).addFragment(CartFragment())
         }
         addBackStackListener()
     }
@@ -102,7 +96,6 @@ class HomeFragment : BaseFragment(R.layout.fragment_home) {
         } else {
             CommonUtils.setValueToView(tvBadge, App.cartList.size.toString())
         }
-
     }
 
     private fun addBackStackListener() {

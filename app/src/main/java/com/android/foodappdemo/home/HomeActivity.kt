@@ -1,14 +1,13 @@
-package com.android.foodappdemo
+package com.android.foodappdemo.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.android.foodappdemo.R
 import com.android.foodappdemo.adapter.FeaturedItemAdapter
-import com.android.foodappdemo.home.HomeFragment
 
 class HomeActivity : AppCompatActivity() {
 
-    private var featuredItemAdapter: FeaturedItemAdapter? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
