@@ -5,14 +5,14 @@ class Problem1 {
         @JvmStatic
         fun main(args: Array<String>) {
             val str = "abc"
-            val k = 28
+            val count = 28
             // function call
-            encode(str, k)
+            encode(str, count)
         }
 
-        private fun encode(s: String, k: Int) {
+        private fun encode(s: String, c: Int) {
             // changed string
-            var count = k
+            var count = c
             var str = ""
 
             // iterate for every characters
